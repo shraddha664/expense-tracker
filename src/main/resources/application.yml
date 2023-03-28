@@ -1,0 +1,14 @@
+
+
+spring:
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/expense-tracker
+    username: root
+    password: spmysql
+  jpa:
+    hibernate:
+      ddl-auto: update
+      generate-ddl: true
+      format-sql: true
+
