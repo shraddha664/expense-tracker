@@ -22,13 +22,9 @@ public class Expense {
     private Long expenseId;
 
     @Column(name = "amount")
-    @NotNull
     private Double  expenseAmount;
 
     @Column(name = "title")
-    @NotNull
-    @NotEmpty
-    @Size(max = 500)
     private String expenseTitle;
 
     @Column(name = "description")
