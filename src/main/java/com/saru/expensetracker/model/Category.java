@@ -23,9 +23,6 @@ public class Category {
     private Long categoryId;
 
     @Column(name = "category_name")
-    @NotEmpty
-    @NotNull
-    @Size(min = 2,max = 500)
     private String categoryName;
 
     @OneToMany(fetch = FetchType.LAZY,targetEntity = Expense.class,cascade = CascadeType.ALL)

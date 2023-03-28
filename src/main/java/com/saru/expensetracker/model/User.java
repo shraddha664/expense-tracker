@@ -23,27 +23,15 @@ public class User {
     private Long id;
 
     @Column(name ="f_name")
-    @NotEmpty
-    @NotNull
-    @Size(min = 2,max = 30)
     private String firstName;
 
     @Column(name = "l_name")
-    @NotEmpty
-    @NotNull
-    @Size(min = 2,max = 30)
     private String lastName;
 
     @Column(name = "user_name")
-    @NotEmpty
-    @NotNull
-    @Size(min = 2,max = 30)
     private String username;
 
     @Column(name = "password")
-    @NotEmpty
-    @NotNull
-    @Size(min = 2)
     private String password;
 
 

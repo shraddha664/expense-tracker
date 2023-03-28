@@ -7,6 +7,7 @@ import com.saru.expensetracker.model.Category;
 import com.saru.expensetracker.model.Expense;
 import com.saru.expensetracker.repository.CategoryRepository;
 import com.saru.expensetracker.repository.ExpenseRepository;
+import com.saru.expensetracker.validators.Violations;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -22,9 +23,11 @@ import java.util.List;
 public class CategoryService {
     private final CategoryRepository categoryRepository;
     private final ExpenseRepository expenseRepository;
+    private final Violations validationConfig;
 
     @Transactional
     public void addCategory(Long userId, CategoryDto categoryDto) {
+        validationConfig.violationsMessage(categoryDto);
         categoryRepository.save(Category.builder()
                 .categoryName(categoryDto.getCategoryName())
                 .build());
